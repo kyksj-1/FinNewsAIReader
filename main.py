@@ -41,28 +41,39 @@ class FinNewsPipeline:
             news = await self.queue.get()
             if news is None:
                 self.queue.task_done()
-                break # 收到哨兵，下班
+                break 
             
             try:
-                # 1. Fast Path (CPU/Light LLM task)
-                # 注：虽然用的是同一个LLM，但Token数极少，耗时短
+                # === 诊断插桩：强制保存 Raw Data ===
+                # 只要抓到了，先存下来，证明我们来过
+                raw_filename = f"raw_{int(asyncio.get_event_loop().time() * 1000)}.txt"
+                raw_path = settings.DATA_RAW_DIR / raw_filename
+                
+                # 简单的写文件操作
+                try:
+                    async with aiofiles.open(raw_path, mode='w', encoding='utf-8') as f:
+                        await f.write(f"URL: {news.url}\nTITLE: {news.title}\nCONTENT:\n{news.content}")
+                except Exception as save_err:
+                    logger.error(f"Failed to save raw: {save_err}")
+                # =================================
+
+                # 1. Fast Path
                 if await self.engine.fast_path_filter(news):
-                    
-                    # 2. Slow Path (GPU heavy task)
-                    logger.info(f"⚡ Entering Slow Path: {news.title}")
+                    logger.info(f"⚡ Entering Slow Path: {news.title[:30]}...")
                     analysis = await self.engine.slow_path_analyze(news)
                     
                     if analysis:
                         await self.save_result(analysis)
                         logger.success(f"🎯 Signal Extracted: Score {analysis.score} | {analysis.related_stocks}")
-                else:
-                    logger.info(f"🗑️ Discarding Noise: {news.title}")
+                
+                # 哪怕是 Noise，因为前面已经 save raw 了，这里就不需要额外操作了
 
             except Exception as e:
-                logger.exception(f"Pipeline Error: {e}")
+                logger.exception(f"Pipeline Error processing {news.url}: {e}")
             finally:
                 self.queue.task_done()
 
+                
     async def save_result(self, analysis: SignalAnalysis):
         """
         保存结果到 JSONL
@@ -107,7 +118,7 @@ async def main_loop():
                 logger.info("💤 No new signals. Standing by.")
             
             # 3. 冷却时间 (比如每 60 秒扫一次，避免被封 IP)
-            await asyncio.sleep(15)
+            await asyncio.sleep(30)
             
     except KeyboardInterrupt:
         logger.warning("🛑 Manual Stop Signal Received.")

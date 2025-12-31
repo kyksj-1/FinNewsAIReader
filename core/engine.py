@@ -2,48 +2,133 @@ import aiohttp
 import asyncio
 import json
 import re
+import subprocess
 from typing import Optional
 from loguru import logger
 from config.settings import settings
 from core.schema import NewsPayload, SignalAnalysis
 
+
 class LLMEngine:
     """
-    推理引擎：管理 4060 显存资源与模型交互
+    推理引擎：支持本地 Ollama 和云端 DeepSeek
     """
-    def __init__(self):
-        self.api_url = f"{settings.OLLAMA_BASE_URL}/api/generate"
-        # 显存是稀缺资源，必须排队访问
-        self.gpu_lock = asyncio.Lock() if settings.MAX_GPU_CONCURRENCY == 1 else asyncio.Semaphore(settings.MAX_GPU_CONCURRENCY)
 
-    async def _call_ollama(self, prompt: str, temp: float, max_tokens: int = 2048) -> str:
+    def __init__(self):
+        limit = 50 if settings.LLM_PROVIDER == "deepseek" else settings.MAX_GPU_CONCURRENCY
+        self.concurrency_lock = asyncio.Semaphore(limit)
+
+    async def _get_gpu_temperature(self) -> Optional[int]:
+        def runner() -> Optional[int]:
+            try:
+                result = subprocess.run(
+                    [
+                        "nvidia-smi",
+                        "--query-gpu=temperature.gpu",
+                        "--format=csv,noheader,nounits",
+                    ],
+                    capture_output=True,
+                    text=True,
+                    check=True,
+                )
+                line = result.stdout.strip().splitlines()[0].strip()
+                return int(line)
+            except Exception:
+                return None
+
+        return await asyncio.to_thread(runner)
+
+    async def _wait_for_safe_temperature(self) -> None:
+        limit = settings.GPU_TEMP_LIMIT
+        resume = settings.GPU_TEMP_RESUME
+        interval = settings.GPU_TEMP_CHECK_INTERVAL
+        if limit <= 0 or interval <= 0:
+            return
+        if resume <= 0 or resume >= limit:
+            resume = max(limit - 10, 0)
+        temp = await self._get_gpu_temperature()
+        if temp is None:
+            return
+        if temp < limit:
+            return
+        logger.warning(f"GPU temperature {temp}°C exceeds limit {limit}°C, waiting for cooldown")
+        while True:
+            await asyncio.sleep(interval)
+            temp = await self._get_gpu_temperature()
+            if temp is None:
+                logger.warning("GPU temperature check failed during cooldown, resuming inference")
+                return
+            if temp <= resume:
+                logger.info(f"GPU temperature {temp}°C is below resume threshold {resume}°C, resuming inference")
+                return
+
+    async def _call_deepseek(self, prompt: str, temp: float, max_tokens: int) -> str:
         """
-        底层 API 调用，受 GPU 锁保护
+        DeepSeek API 调用 (OpenAI 兼容协议)
         """
+        url = f"{settings.DEEPSEEK_BASE_URL}/chat/completions"
+        headers = {
+            "Authorization": f"Bearer {settings.DEEPSEEK_API_KEY}",
+            "Content-Type": "application/json",
+        }
         payload = {
-            "model": settings.MODEL_NAME,
+            "model": settings.DEEPSEEK_MODEL_NAME,
+            "messages": [
+                {"role": "system", "content": "You are a professional financial quantitative analyst."},
+                {"role": "user", "content": prompt},
+            ],
+            "temperature": temp,
+            "max_tokens": max_tokens,
+            "stream": False,
+        }
+        async with aiohttp.ClientSession() as session:
+            try:
+                async with session.post(url, headers=headers, json=payload, timeout=120) as resp:
+                    if resp.status != 200:
+                        error_text = await resp.text()
+                        logger.error(f"[DeepSeek] Error {resp.status}: {error_text}")
+                        return ""
+                    data = await resp.json()
+                    return data["choices"][0]["message"]["content"]
+            except Exception as e:
+                logger.error(f"[DeepSeek] Connection Failed: {e}")
+                return ""
+
+    async def _call_ollama(self, prompt: str, temp: float, max_tokens: int) -> str:
+        """
+        本地 Ollama 调用
+        """
+        url = f"{settings.OLLAMA_BASE_URL}/api/generate"
+        payload = {
+            "model": settings.LOCAL_MODEL_NAME,
             "prompt": prompt,
             "stream": False,
             "options": {
                 "temperature": temp,
                 "num_ctx": settings.CONTEXT_WINDOW,
-                "num_predict": max_tokens
-            }
+                "num_predict": max_tokens,
+            },
         }
+        await self._wait_for_safe_temperature()
+        async with aiohttp.ClientSession() as session:
+            try:
+                async with session.post(url, json=payload, timeout=60) as resp:
+                    resp.raise_for_status()
+                    data = await resp.json()
+                    return data.get("response", "")
+            except Exception as e:
+                logger.error(f"[Ollama] Error: {e}")
+                return ""
 
-        async with self.gpu_lock: # <--- 物理瓶颈：显存锁
-            async with aiohttp.ClientSession() as session:
-                try:
-                    async with session.post(self.api_url, json=payload, timeout=60) as resp:
-                        resp.raise_for_status()
-                        data = await resp.json()
-                        return data.get("response", "")
-                except Exception as e:
-                    logger.error(f"Inference Failure: {e}")
-                    return ""
+    async def call_model(self, prompt: str, temp: float, max_tokens: int = 2048) -> str:
+        """
+        统一入口：根据配置分发
+        """
+        async with self.concurrency_lock:
+            if settings.LLM_PROVIDER == "deepseek":
+                return await self._call_deepseek(prompt, temp, max_tokens)
+            return await self._call_ollama(prompt, temp, max_tokens)
 
-
-     # 修改 core/engine.py
     async def fast_path_filter(self, news: NewsPayload) -> bool:
         """
         快通道：基于标题的快速二分类 (High-Pass Filter)
@@ -53,7 +138,9 @@ class LLMEngine:
         # 物理直觉：有些信号太明显，不需要过模型
         keywords = ["A股", "股市", "人民币", "央行", "美联储", "利好", "利空", "GDP", "CPI", "监管"
         "芯片", "半导体", "财报", "增持", "回购", "AI", "金融", "算力", "半导体",
-        "沪指", "板块", "概念股", "股票", "涨停", "跌停", "回调", "反弹", "市场情绪"]
+        "沪指", "板块", "概念股", "股票", "涨停", "跌停", "回调", "反弹", "市场情绪",
+        "融资", "证券", "大盘", "指数", "成交额", "北向", "外资", "特斯拉", "宁德时代"
+        ]
         if any(k in news.title for k in keywords):
             logger.info(f"⚡ [Fast Path] Keyword Bypass | {news.title[:20]}...")
             return True
@@ -68,20 +155,22 @@ class LLMEngine:
         如果完全无关（如娱乐、体育、纯八卦、小型社会事件等），请回答"否"。
         只回答一个字。
         """
+        res = await self.call_model(prompt, temp=settings.TEMP_FAST, max_tokens=64)
+        clean_res = res.strip().upper()
         
-        # 稍微调高一点 temp，让它敢于回答
-        res = await self._call_ollama(prompt, temp=0.1, max_tokens=5)
+        # 修改点：打印原始回复，看看它到底想说什么
+        logger.debug(f"Raw Model Response: {clean_res}")
         
-        # 清洗输出：去掉标点和空格
-        clean_res = res.strip().replace("。", "").replace(".", "")
+
         
         # 3. 宽松判别逻辑
         is_relevant = "是" in clean_res or "Yes" in clean_res or "相关" in clean_res
         
         status = "Relevant" if is_relevant else "Noise"
         # 关键：打印出模型到底说了什么，方便调试
-        logger.info(f"🔍 [Fast Path] Model said: '{clean_res}' -> {status} | Title: {news.title[:30]}...")
-        
+        logger.info(
+            f"🔍 [Fast Path] Model said: '{clean_res}' -> {status} | Title: {news.title[:30]}..."
+        )
         return is_relevant
 
     async def slow_path_analyze(self, news: NewsPayload) -> Optional[SignalAnalysis]:
@@ -94,7 +183,7 @@ class LLMEngine:
         
         prompt = f"""
         [Role]
-        你是一个资深量化研究员。你需要分析新闻对A股市场的影响。
+        你是一个资深量化研究员。你需要分析新闻对A股市场的影响。当讯息中出现股票名字的时候，必须格外注意！说明这个股票是有消息的。
 
         [Input News]
         {safe_content}
@@ -105,7 +194,7 @@ class LLMEngine:
            - 分析事件的一阶影响（直接受益/受损）。
            - 分析二阶影响（供应链、竞争对手、替代品）。
            - 结合当前宏观环境（流动性、政策周期）评估信号强度。
-           - 像解决物理方程一样，推导最终的 Score。
+           - 推导最终的 Score。
 
         2. **Output Format**:
            思考结束后，输出严格的 JSON。
@@ -125,22 +214,15 @@ class LLMEngine:
             "time_horizon": "Medium"
         }}
         """
-        
-        # 调高一点 Temperature，增加思维的发散性
-        raw_res = await self._call_ollama(prompt, temp=0.8, max_tokens=max_tokens_limit)
-        
+        # 调高一点温度，实现发散性
+        raw_res = await self.call_model(prompt, temp=settings.TEMP_SLOW, max_tokens=max_tokens_limit)
+        raw_res = raw_res.replace("```json", "").replace("```", "")
         try:
-            # 解析逻辑升级：先提取 JSON
             match = re.search(r"\{.*\}", raw_res, re.DOTALL)
             if not match:
                 raise ValueError("No JSON found")
-            
             json_str = match.group(0)
             data = json.loads(json_str)
-            
-            # 可选：如果你想把 <think> 内容也存下来，可以在这里正则提取
-            # think_content = re.search(r"<think>(.*?)</think>", raw_res, re.DOTALL)
-            
             analysis = SignalAnalysis(source_url=news.url, **data)
             return analysis
             

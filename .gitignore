@@ -24,6 +24,7 @@ data/raw/
 # 常见虚拟环境
 venv/
 .venv/
+.env/
 
 # IDE 配置
 .idea/

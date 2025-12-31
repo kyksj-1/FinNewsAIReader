@@ -22,13 +22,13 @@ class AsyncCrawler:
         wait=wait_exponential(multiplier=1, min=2, max=10),
         retry=retry_if_exception_type(aiohttp.ClientError)
     )
+
+    # 在 core/crawler.py 中
     async def fetch_jina_markdown(self, session: aiohttp.ClientSession, url: str) -> str:
-        """
-        通过 Jina Reader 获取清洗后的 Markdown
-        """
         target_url = f"{settings.JINA_READER_BASE}{url}"
         async with self.semaphore:
-            async with session.get(target_url, headers=self.headers, timeout=15) as response:
+            # 修改点：timeout 从 15 改成 30
+            async with session.get(target_url, headers=self.headers, timeout=30) as response:
                 response.raise_for_status()
                 return await response.text()
 
