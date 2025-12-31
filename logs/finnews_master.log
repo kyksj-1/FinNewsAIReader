@@ -1,0 +1,640 @@
+2025-12-31 12:43:41.595 | INFO     | __main__:run:73 - 🚀 FinNewsMasterV1 System Launching...
+2025-12-31 12:43:41.595 | INFO     | __main__:run:74 - HARDWARE: Max GPU Concurrency = 1
+2025-12-31 12:43:41.596 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.cls.cn/detail/1550234
+2025-12-31 12:43:51.374 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.cls.cn/detail/1550235
+2025-12-31 12:43:56.059 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title:
+2025-12-31 12:43:56.059 | INFO     | __main__:consumer:57 - 🗑️ Discarding Noise: Title:
+2025-12-31 12:44:00.178 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.com.cn/stock/something.shtml
+2025-12-31 12:44:00.802 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: REITs系列（六）| 解码公募REITs的定期报告
+2025-12-31 12:44:00.806 | INFO     | __main__:consumer:57 - 🗑️ Discarding Noise: Title: REITs系列（六）| 解码公募REITs的定期报告
+2025-12-31 12:44:05.927 | INFO     | __main__:producer:32 - 📡 Producer finished fetching all URLs.
+2025-12-31 12:44:06.542 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 页面没有找到
+2025-12-31 12:44:06.544 | INFO     | __main__:consumer:57 - 🗑️ Discarding Noise: Title: 页面没有找到
+2025-12-31 12:44:06.545 | INFO     | __main__:run:82 - ✅ All tasks completed.
+2025-12-31 12:45:17.333 | INFO     | __main__:run:73 - 🚀 FinNewsMasterV1 System Launching...
+2025-12-31 12:45:17.334 | INFO     | __main__:run:74 - HARDWARE: Max GPU Concurrency = 1
+2025-12-31 12:45:17.334 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.cls.cn/detail/1550234
+2025-12-31 12:45:25.889 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.cls.cn/detail/1550235
+2025-12-31 12:45:26.377 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title:
+2025-12-31 12:45:26.379 | INFO     | __main__:consumer:57 - 🗑️ Discarding Noise: Title:
+2025-12-31 12:45:28.243 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.com.cn/stock/something.shtml
+2025-12-31 12:45:28.938 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: REITs系列（六）| 解码公募REITs的定期报告
+2025-12-31 12:45:28.939 | INFO     | __main__:consumer:57 - 🗑️ Discarding Noise: Title: REITs系列（六）| 解码公募REITs的定期报告
+2025-12-31 12:45:32.554 | INFO     | __main__:producer:32 - 📡 Producer finished fetching all URLs.
+2025-12-31 12:45:33.292 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 页面没有找到
+2025-12-31 12:45:33.293 | INFO     | __main__:consumer:57 - 🗑️ Discarding Noise: Title: 页面没有找到
+2025-12-31 12:45:33.294 | INFO     | __main__:run:82 - ✅ All tasks completed.
+2025-12-31 12:59:57.590 | INFO     | __main__:main_loop:88 - 🚀 FinNewsMasterV1: AUTO-PILOT MODE ENGAGED
+2025-12-31 12:59:57.590 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 12:59:57.902 | INFO     | core.monitor:harvest:104 - 📡 Radar detected 75 new signals.
+2025-12-31 12:59:57.910 | INFO     | __main__:main_loop:104 - 📥 Feeding 75 URLs to pipeline...
+2025-12-31 12:59:57.911 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13832289.html
+2025-12-31 13:00:07.389 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13831565.html
+2025-12-31 13:00:12.172 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 全国育儿补贴发放超2400万人，2026年度补贴下周开放申领|界面新闻 · 中国
+2025-12-31 13:00:12.173 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 全国育儿补贴发放超2400万人，2026年度补贴下周开放申领|界面新闻 · 中国
+2025-12-31 13:00:14.064 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13825392.html
+2025-12-31 13:00:14.726 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 超日赶德，印度称3年内其GDP有望跻身世界前三|界面新闻 · 天下
+2025-12-31 13:00:14.730 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 超日赶德，印度称3年内其GDP有望跻身世界前三|界面新闻 · 天下
+2025-12-31 13:00:21.623 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13829736.html
+2025-12-31 13:00:22.398 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 美联储会议纪要：多数决策者支持明年在通胀下降的前提下继续降息|界面新闻 · 天下
+2025-12-31 13:00:22.405 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 美联储会议纪要：多数决策者支持明年在通胀下降的前提下继续降息|界面新闻 · 天下
+2025-12-31 13:00:34.056 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13830240.html
+2025-12-31 13:00:34.605 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 巩固亚洲第一邮轮港地位，上海立法促产业升级|界面新闻
+2025-12-31 13:00:34.606 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 巩固亚洲第一邮轮港地位，上海立法促产业升级|界面新闻
+2025-12-31 13:00:42.285 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13830595.html
+2025-12-31 13:00:42.947 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 追踪｜“非粮化”整治下百亩苗圃被毁，高院提审后涉案镇政府同意评估损失|界面新闻 · 中国
+2025-12-31 13:00:42.948 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 追踪｜“非粮化”整治下百亩苗圃被毁，高院提审后涉案镇政府同意评估损失|界面新闻 · 中国
+2025-12-31 13:00:57.306 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13830412.html
+2025-12-31 13:00:58.168 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 美政府已批准三星、SK海力士向中国出口芯片制造设备|界面新闻 · 天下
+2025-12-31 13:00:58.170 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 美政府已批准三星、SK海力士向中国出口芯片制造设备|界面新闻 · 天下
+2025-12-31 13:01:06.630 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13828278.html
+2025-12-31 13:01:07.147 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 界面早报 | 2026年优化实施“两新”政策方案发布；明年起个人买房满两年卖出时免征增值税|界面新闻 · 中国
+2025-12-31 13:01:07.149 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 界面早报 | 2026年优化实施“两新”政策方案发布；明年起个人买房满两年卖出时免征增值税|界面新闻 · 中国
+2025-12-31 13:01:14.237 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13828670.html
+2025-12-31 13:01:15.121 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 直通部委｜教育部加快建设教育人工智能大模型 民政部将建最低生活保障标准备案制度|界面新闻 · 中国
+2025-12-31 13:01:15.123 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 直通部委｜教育部加快建设教育人工智能大模型 民政部将建最低生活保障标准备案制度|界面新闻 · 中国
+2025-12-31 13:01:50.701 | INFO     | __main__:main_loop:88 - 🚀 FinNewsMasterV1: AUTO-PILOT MODE ENGAGED
+2025-12-31 13:01:50.701 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:01:51.123 | INFO     | core.monitor:harvest:104 - 📡 Radar detected 75 new signals.
+2025-12-31 13:01:51.127 | INFO     | __main__:main_loop:104 - 📥 Feeding 75 URLs to pipeline...
+2025-12-31 13:01:51.127 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13832289.html
+2025-12-31 13:01:52.535 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13831565.html
+2025-12-31 13:01:53.319 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 全国育儿补贴发放超2400万人，2026年度补贴下周开放申领|界面新闻 · 中国
+2025-12-31 13:01:53.320 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 全国育儿补贴发放超2400万人，2026年度补贴下周开放申领|界面新闻 · 中国
+2025-12-31 13:01:53.659 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13825392.html
+2025-12-31 13:01:54.255 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 超日赶德，印度称3年内其GDP有望跻身世界前三|界面新闻 · 天下
+2025-12-31 13:01:54.255 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 超日赶德，印度称3年内其GDP有望跻身世界前三|界面新闻 · 天下
+2025-12-31 13:02:02.811 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13829736.html
+2025-12-31 13:02:03.890 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 美联储会议纪要：多数决策者支持明年在通胀下降的前提下继续降息|界面新闻 · 天下
+2025-12-31 13:02:03.891 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 美联储会议纪要：多数决策者支持明年在通胀下降的前提下继续降息|界面新闻 · 天下
+2025-12-31 13:02:03.976 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13830240.html
+2025-12-31 13:02:04.539 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 巩固亚洲第一邮轮港地位，上海立法促产业升级|界面新闻
+2025-12-31 13:02:04.540 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 巩固亚洲第一邮轮港地位，上海立法促产业升级|界面新闻
+2025-12-31 13:02:05.235 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13830595.html
+2025-12-31 13:02:05.756 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 追踪｜“非粮化”整治下百亩苗圃被毁，高院提审后涉案镇政府同意评估损失|界面新闻 · 中国
+2025-12-31 13:02:05.757 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 追踪｜“非粮化”整治下百亩苗圃被毁，高院提审后涉案镇政府同意评估损失|界面新闻 · 中国
+2025-12-31 13:02:06.338 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13830412.html
+2025-12-31 13:02:06.885 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 美政府已批准三星、SK海力士向中国出口芯片制造设备|界面新闻 · 天下
+2025-12-31 13:02:06.889 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 美政府已批准三星、SK海力士向中国出口芯片制造设备|界面新闻 · 天下
+2025-12-31 13:02:09.331 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13828278.html
+2025-12-31 13:02:10.071 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 界面早报 | 2026年优化实施“两新”政策方案发布；明年起个人买房满两年卖出时免征增值税|界面新闻 · 中国
+2025-12-31 13:02:10.072 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 界面早报 | 2026年优化实施“两新”政策方案发布；明年起个人买房满两年卖出时免征增值税|界面新闻 · 中国
+2025-12-31 13:02:10.542 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13828670.html
+2025-12-31 13:02:11.086 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 直通部委｜教育部加快建设教育人工智能大模型 民政部将建最低生活保障标准备案制度|界面新闻 · 中国
+2025-12-31 13:02:11.086 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 直通部委｜教育部加快建设教育人工智能大模型 民政部将建最低生活保障标准备案制度|界面新闻 · 中国
+2025-12-31 13:02:12.191 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13825269.html
+2025-12-31 13:02:12.780 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 地方新闻精选 | 考公机构挂横幅“上岸彩礼多要20万”被查 小学食堂使用过期米线被罚5万|界面新闻 · 中国
+2025-12-31 13:02:12.781 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 地方新闻精选 | 考公机构挂横幅“上岸彩礼多要20万”被查 小学食堂使用过期米线被罚5万|界面新闻 · 中国
+2025-12-31 13:02:21.002 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13827872.html
+2025-12-31 13:02:21.741 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 界面晚报 | 第二轮土地承包到期后再延长30年；在岸人民币兑美元升破7.0关口|界面新闻 · 中国
+2025-12-31 13:02:21.744 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 界面晚报 | 第二轮土地承包到期后再延长30年；在岸人民币兑美元升破7.0关口|界面新闻 · 中国
+2025-12-31 13:02:28.823 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13824731.html
+2025-12-31 13:02:29.497 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 全总原副主席张世平71岁被查：曾在全国妇联任职，系今年第5个“女老虎”|界面新闻 · 中国
+2025-12-31 13:02:29.500 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 全总原副主席张世平71岁被查：曾在全国妇联任职，系今年第5个“女老虎”|界面新闻 · 中国
+2025-12-31 13:02:35.751 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13827915.html
+2025-12-31 13:02:36.525 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 七大领域挑大梁，上海当好2025领跑者|界面新闻
+2025-12-31 13:02:36.526 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 七大领域挑大梁，上海当好2025领跑者|界面新闻
+2025-12-31 13:02:48.860 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13819272.html
+2025-12-31 13:02:49.446 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 国家矿山安监局：将探索建立煤矿安全生产轻微免罚清单|界面新闻 · 中国
+2025-12-31 13:02:49.449 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 国家矿山安监局：将探索建立煤矿安全生产轻微免罚清单|界面新闻 · 中国
+2025-12-31 13:02:56.345 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13819033.html
+2025-12-31 13:02:57.021 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 冰雪微笑曲线｜穿越300年历史，长白山最后的木屋村落如何“点木成金”？|界面新闻 · 中国
+2025-12-31 13:02:57.024 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 冰雪微笑曲线｜穿越300年历史，长白山最后的木屋村落如何“点木成金”？|界面新闻 · 中国
+2025-12-31 13:03:11.358 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://www.jiemian.com/article/13819033.html: 
+2025-12-31 13:03:11.361 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13814250.html
+2025-12-31 13:03:27.355 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://www.jiemian.com/article/13814250.html: 
+2025-12-31 13:03:27.356 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13790100.html
+2025-12-31 13:03:43.363 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://www.jiemian.com/article/13790100.html: 
+2025-12-31 13:03:43.366 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13814536.html
+2025-12-31 13:03:51.350 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13811613.html
+2025-12-31 13:03:51.999 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 育儿补贴、免保教费、灵活就业者权益保障......那些民生暖意 | 2025年政策回顾|界面新闻 · 中国
+2025-12-31 13:03:52.001 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 育儿补贴、免保教费、灵活就业者权益保障......那些民生暖意 | 2025年政策回顾|界面新闻 · 中国
+2025-12-31 13:04:06.361 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://www.jiemian.com/article/13811613.html: 
+2025-12-31 13:04:06.362 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13832220.html
+2025-12-31 13:04:15.398 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13831487.html
+2025-12-31 13:04:16.325 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 国务院任免国家工作人员：林泽昌任财政部副部长|界面新闻 · 快讯
+2025-12-31 13:04:16.326 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 国务院任免国家工作人员：林泽昌任财政部副部长|界面新闻 · 快讯
+2025-12-31 13:04:29.008 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13830234.html
+2025-12-31 13:04:29.543 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 中俄两国元首互致新年贺电|界面新闻 · 快讯
+2025-12-31 13:04:29.543 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 中俄两国元首互致新年贺电|界面新闻 · 快讯
+2025-12-31 13:04:44.347 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://www.jiemian.com/article/13830234.html: 
+2025-12-31 13:04:44.350 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13827889.html
+2025-12-31 13:04:54.408 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13827876.html
+2025-12-31 13:04:55.095 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 福建海警位台岛周边邻近海域开展执法管控演练|界面新闻 · 快讯
+2025-12-31 13:04:55.097 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 福建海警位台岛周边邻近海域开展执法管控演练|界面新闻 · 快讯
+2025-12-31 13:05:01.305 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13827702.html
+2025-12-31 13:05:02.747 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 东部战区位台岛以东海域开展立体投送、夺控要港等科目演练|界面新闻 · 快讯
+2025-12-31 13:05:02.748 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 东部战区位台岛以东海域开展立体投送、夺控要港等科目演练|界面新闻 · 快讯
+2025-12-31 13:05:07.562 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606805819.html
+2025-12-31 13:05:08.443 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 教育部：计划明年出台人工智能赋能教育相关政策文件|界面新闻 · 快讯
+2025-12-31 13:05:08.443 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 教育部：计划明年出台人工智能赋能教育相关政策文件|界面新闻 · 快讯
+2025-12-31 13:05:13.909 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606804590.html
+2025-12-31 13:05:15.396 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 总规模500亿元 四川社保科创基金签约揭牌 _ 东方财富网
+2025-12-31 13:05:15.398 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 总规模500亿元 四川社保科创基金签约揭牌 _ 东方财富网
+2025-12-31 13:05:29.358 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606804590.html: 
+2025-12-31 13:05:29.361 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606805563.html
+2025-12-31 13:05:45.348 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606805563.html: 
+2025-12-31 13:05:45.350 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606791311.html
+2025-12-31 13:06:00.368 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606791311.html: 
+2025-12-31 13:06:00.370 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606803813.html
+2025-12-31 13:06:10.311 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606803779.html
+2025-12-31 13:06:11.060 | INFO     | core.engine:fast_path_filter:59 - [Fast Path] Noise | Title: 制造业PMI时隔8个月重回扩张区间 市场预期向好 _ 东方财富网
+2025-12-31 13:06:11.062 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 制造业PMI时隔8个月重回扩张区间 市场预期向好 _ 东方财富网
+2025-12-31 13:08:40.848 | INFO     | __main__:main_loop:88 - 🚀 FinNewsMasterV1: AUTO-PILOT MODE ENGAGED
+2025-12-31 13:08:40.848 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:08:41.473 | INFO     | core.monitor:harvest:104 - 📡 Radar detected 75 new signals.
+2025-12-31 13:08:41.475 | INFO     | __main__:main_loop:104 - 📥 Feeding 75 URLs to pipeline...
+2025-12-31 13:08:41.475 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13817284.html
+2025-12-31 13:08:50.008 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13832289.html
+2025-12-31 13:08:50.524 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: “超级个体创业者”在上海崛起|界面新闻...
+2025-12-31 13:08:50.529 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: “超级个体创业者”在上海崛起|界面新闻
+2025-12-31 13:08:51.033 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13831565.html
+2025-12-31 13:08:51.492 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 全国育儿补贴发放超2400万人，2026年度补...
+2025-12-31 13:08:51.499 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 全国育儿补贴发放超2400万人，2026年度补贴下周开放申领|界面新闻 · 中国
+2025-12-31 13:08:52.941 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13825392.html
+2025-12-31 13:08:52.950 | INFO     | core.engine:fast_path_filter:56 - ⚡ [Fast Path] Keyword Bypass | Title: 超日赶德，印度称3年内其G...
+2025-12-31 13:08:52.950 | INFO     | __main__:consumer:52 - ⚡ Entering Slow Path: Title: 超日赶德，印度称3年内其GDP有望跻身世界前三|界面新闻 · 天下
+2025-12-31 13:08:55.664 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13829736.html
+2025-12-31 13:08:57.273 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13830240.html
+2025-12-31 13:08:58.299 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13830595.html
+2025-12-31 13:09:00.298 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13830412.html
+2025-12-31 13:09:01.241 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13828278.html
+2025-12-31 13:09:02.439 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13828670.html
+2025-12-31 13:09:03.726 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13825269.html
+2025-12-31 13:09:12.405 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13827872.html
+2025-12-31 13:09:13.039 | SUCCESS  | __main__:consumer:57 - 🎯 Signal Extracted: Score 3 | ['600031.SH', '600984.SH', '601668.SH']
+2025-12-31 13:09:13.040 | INFO     | core.engine:fast_path_filter:56 - ⚡ [Fast Path] Keyword Bypass | Title: 美联储会议纪要：多数决策者...
+2025-12-31 13:09:13.041 | INFO     | __main__:consumer:52 - ⚡ Entering Slow Path: Title: 美联储会议纪要：多数决策者支持明年在通胀下降的前提下继续降息|界面新闻 · 天下
+2025-12-31 13:09:13.611 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13824731.html
+2025-12-31 13:09:14.700 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13827915.html
+2025-12-31 13:09:16.140 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13819272.html
+2025-12-31 13:09:18.622 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13819033.html
+2025-12-31 13:09:20.843 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13814250.html
+2025-12-31 13:09:23.129 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13790100.html
+2025-12-31 13:09:24.648 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13814536.html
+2025-12-31 13:09:26.178 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13832393.html
+2025-12-31 13:09:32.116 | SUCCESS  | __main__:consumer:57 - 🎯 Signal Extracted: Score 5 | ['600000.SH', '600036.SH', '600640.SH', '601318.SH', '600048.SH']
+2025-12-31 13:09:32.365 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 巩固亚洲第一邮轮港地位，上海立法促产业升级|界...
+2025-12-31 13:09:32.365 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 巩固亚洲第一邮轮港地位，上海立法促产业升级|界面新闻
+2025-12-31 13:09:32.628 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13832220.html
+2025-12-31 13:09:32.663 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 追踪｜“非粮化”整治下百亩苗圃被毁，高院提审后...
+2025-12-31 13:09:32.663 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 追踪｜“非粮化”整治下百亩苗圃被毁，高院提审后涉案镇政府同意评估损失|界面新闻 · 中国
+2025-12-31 13:09:32.665 | INFO     | core.engine:fast_path_filter:56 - ⚡ [Fast Path] Keyword Bypass | Title: 美政府已批准三星、SK海力...
+2025-12-31 13:09:32.666 | INFO     | __main__:consumer:52 - ⚡ Entering Slow Path: Title: 美政府已批准三星、SK海力士向中国出口芯片制造设备|界面新闻 · 天下
+2025-12-31 13:09:38.948 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://www.jiemian.com/article/13832220.html: RetryError[<Future at 0x284ef56f890 state=finished raised ClientResponseError>]
+2025-12-31 13:09:38.963 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13831487.html
+2025-12-31 13:09:42.579 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13830234.html
+2025-12-31 13:09:48.614 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://www.jiemian.com/article/13830234.html: RetryError[<Future at 0x284ef577050 state=finished raised ClientResponseError>]
+2025-12-31 13:09:48.616 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13827889.html
+2025-12-31 13:09:50.903 | SUCCESS  | __main__:consumer:57 - 🎯 Signal Extracted: Score 5 | ['688081.SH', '600485.SH', '688012.SH']
+2025-12-31 13:09:51.217 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 界面早报 | 2026年优化实施“两新”政策方...
+2025-12-31 13:09:51.218 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 界面早报 | 2026年优化实施“两新”政策方案发布；明年起个人买房满两年卖出时免征增值税|界面新闻 · 中国
+2025-12-31 13:09:51.585 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 直通部委｜教育部加快建设教育人工智能大模型 民...
+2025-12-31 13:09:51.589 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 直通部委｜教育部加快建设教育人工智能大模型 民政部将建最低生活保障标准备案制度|界面新闻 · 中国
+2025-12-31 13:09:51.922 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 地方新闻精选 | 考公机构挂横幅“上岸彩礼多要...
+2025-12-31 13:09:51.922 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 地方新闻精选 | 考公机构挂横幅“上岸彩礼多要20万”被查 小学食堂使用过期米线被罚5万|界面新闻 · 中国
+2025-12-31 13:09:51.924 | INFO     | core.engine:fast_path_filter:56 - ⚡ [Fast Path] Keyword Bypass | Title: 界面晚报 | 第二轮土地承...
+2025-12-31 13:09:51.924 | INFO     | __main__:consumer:52 - ⚡ Entering Slow Path: Title: 界面晚报 | 第二轮土地承包到期后再延长30年；在岸人民币兑美元升破7.0关口|界面新闻 · 中国
+2025-12-31 13:09:52.523 | INFO     | core.crawler:process_url:41 - Downloading signal: https://www.jiemian.com/article/13827876.html
+2025-12-31 13:09:54.201 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606814914.html
+2025-12-31 13:10:12.361 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606814914.html: 
+2025-12-31 13:10:12.362 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606813058.html
+2025-12-31 13:10:16.003 | SUCCESS  | __main__:consumer:57 - 🎯 Signal Extracted: Score 3 | ['600598.SH', '300087.SZ', '000651.SZ', '600031.SH']
+2025-12-31 13:10:16.365 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 全总原副主席张世平71岁被查：曾在全国妇联任职...
+2025-12-31 13:10:16.366 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 全总原副主席张世平71岁被查：曾在全国妇联任职，系今年第5个“女老虎”|界面新闻 · 中国
+2025-12-31 13:10:16.722 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 七大领域挑大梁，上海当好2025领跑者|界面新...
+2025-12-31 13:10:16.724 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 七大领域挑大梁，上海当好2025领跑者|界面新闻
+2025-12-31 13:10:17.102 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 国家矿山安监局：将探索建立煤矿安全生产轻微免罚...
+2025-12-31 13:10:17.102 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 国家矿山安监局：将探索建立煤矿安全生产轻微免罚清单|界面新闻 · 中国
+2025-12-31 13:10:17.482 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 冰雪微笑曲线｜穿越300年历史，长白山最后的木...
+2025-12-31 13:10:17.482 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 冰雪微笑曲线｜穿越300年历史，长白山最后的木屋村落如何“点木成金”？|界面新闻 · 中国
+2025-12-31 13:10:17.875 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 冰雪微笑曲线｜“千树万树梨花开”，零下20℃的...
+2025-12-31 13:10:17.876 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 冰雪微笑曲线｜“千树万树梨花开”，零下20℃的吉林市小岛迎来“雾凇经济”|界面新闻 · 中国
+2025-12-31 13:10:18.355 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 【观察】托育服务法拟设全国统一“准入类”考试，...
+2025-12-31 13:10:18.356 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 【观察】托育服务法拟设全国统一“准入类”考试，行业影响几何？|界面新闻 · 中国
+2025-12-31 13:10:18.699 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 哪些新法即将施行，哪些法律正在酝酿？｜2026...
+2025-12-31 13:10:18.699 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 哪些新法即将施行，哪些法律正在酝酿？｜2026年展望|界面新闻 · 中国
+2025-12-31 13:10:19.071 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 育儿补贴、免保教费、灵活就业者权益保障.......
+2025-12-31 13:10:19.071 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 育儿补贴、免保教费、灵活就业者权益保障......那些民生暖意 | 2025年政策回顾|界面新闻 · 中国
+2025-12-31 13:10:19.407 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 全国政协举行新年茶话会，习近平发表重要讲话|界...
+2025-12-31 13:10:19.407 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 全国政协举行新年茶话会，习近平发表重要讲话|界面新闻 · 快讯
+2025-12-31 13:10:19.823 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 中俄两国元首互致新年贺电|界面新闻 · 快讯...
+2025-12-31 13:10:19.823 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 中俄两国元首互致新年贺电|界面新闻 · 快讯
+2025-12-31 13:10:20.216 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 福建海警位台岛周边邻近海域开展执法管控演练|界...
+2025-12-31 13:10:20.216 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 福建海警位台岛周边邻近海域开展执法管控演练|界面新闻 · 快讯
+2025-12-31 13:10:20.569 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 东部战区位台岛以东海域开展立体投送、夺控要港等...
+2025-12-31 13:10:20.569 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 东部战区位台岛以东海域开展立体投送、夺控要港等科目演练|界面新闻 · 快讯
+2025-12-31 13:10:28.358 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606813058.html: 
+2025-12-31 13:10:28.358 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606810771.html
+2025-12-31 13:10:41.156 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606808125.html
+2025-12-31 13:10:41.795 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 现货白银日内跌超6% 纽约期银日内跌超8% _...
+2025-12-31 13:10:41.795 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 现货白银日内跌超6% 纽约期银日内跌超8% _ 东方财富网
+2025-12-31 13:10:51.238 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606805819.html
+2025-12-31 13:10:51.811 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 药理学家：这一年，国产创新药正在经历“Deep...
+2025-12-31 13:10:51.812 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 药理学家：这一年，国产创新药正在经历“DeepSeek时刻” _ 东方财富网
+2025-12-31 13:10:52.606 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606804590.html
+2025-12-31 13:10:53.047 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 总规模500亿元 四川社保科创基金签约揭牌 _...
+2025-12-31 13:10:53.049 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 总规模500亿元 四川社保科创基金签约揭牌 _ 东方财富网
+2025-12-31 13:10:54.392 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606805563.html
+2025-12-31 13:10:54.808 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 欧莱雅、雅戈尔都入局 东北老板靠卖千元精油上市...
+2025-12-31 13:10:54.810 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 欧莱雅、雅戈尔都入局 东北老板靠卖千元精油上市 但还挤不进北京SKP _ 东方财富网
+2025-12-31 13:10:55.716 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606791311.html
+2025-12-31 13:10:56.397 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 印度尼西亚镍冶炼厂协会预计2026年国内镍冶炼...
+2025-12-31 13:10:56.398 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 印度尼西亚镍冶炼厂协会预计2026年国内镍冶炼行业的镍矿需求量约为3.4亿-3.5亿吨 _ 东方财富网
+2025-12-31 13:10:56.905 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606803813.html
+2025-12-31 13:10:56.908 | INFO     | core.engine:fast_path_filter:56 - ⚡ [Fast Path] Keyword Bypass | Title: 一年六起疯狂“买买买” M...
+2025-12-31 13:10:56.909 | INFO     | __main__:consumer:52 - ⚡ Entering Slow Path: Title: 一年六起疯狂“买买买” Meta并购Manus“补AI短板”意图明显 _ 东方财富网
+2025-12-31 13:10:58.008 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606803779.html
+2025-12-31 13:10:59.361 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606802864.html
+2025-12-31 13:11:15.355 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606802864.html: 
+2025-12-31 13:11:15.358 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606801913.html
+2025-12-31 13:11:20.306 | SUCCESS  | __main__:consumer:57 - 🎯 Signal Extracted: Score 3 | ['002230.SZ', '002415.SZ', '002236.SZ', '688256.SH']
+2025-12-31 13:11:20.630 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 制造业PMI时隔8个月重回扩张区间 市场预期向...
+2025-12-31 13:11:20.631 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 制造业PMI时隔8个月重回扩张区间 市场预期向好 _ 东方财富网
+2025-12-31 13:11:20.632 | INFO     | core.engine:fast_path_filter:56 - ⚡ [Fast Path] Keyword Bypass | Title: AI引爆存储需求！日本铠侠...
+2025-12-31 13:11:20.634 | INFO     | __main__:consumer:52 - ⚡ Entering Slow Path: Title: AI引爆存储需求！日本铠侠2025年暴涨540% 成MSCI全球指数头号牛股 _ 东方财富网
+2025-12-31 13:11:31.343 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606801913.html: 
+2025-12-31 13:11:31.344 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606801839.html
+2025-12-31 13:11:46.352 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606801839.html: 
+2025-12-31 13:11:46.354 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606800634.html
+2025-12-31 13:11:50.334 | SUCCESS  | __main__:consumer:57 - 🎯 Signal Extracted: Score 7 | ['603042.SH', '688008.SH', '600585.SH', '603501.SH', '688981.SH']
+2025-12-31 13:12:01.353 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606800634.html: 
+2025-12-31 13:12:01.355 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606800125.html
+2025-12-31 13:12:12.275 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606798294.html
+2025-12-31 13:12:12.814 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 全国粮食和物资储备工作会议在京召开 _ 东方财...
+2025-12-31 13:12:12.816 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 全国粮食和物资储备工作会议在京召开 _ 东方财富网
+2025-12-31 13:12:27.355 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606798294.html: 
+2025-12-31 13:12:27.356 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606797665.html
+2025-12-31 13:12:43.345 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606797665.html: 
+2025-12-31 13:12:43.346 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606797246.html
+2025-12-31 13:12:50.573 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606793970.html
+2025-12-31 13:12:51.166 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 2025年国家发展改革委下达以工代赈中央投资3...
+2025-12-31 13:12:51.167 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 2025年国家发展改革委下达以工代赈中央投资355亿元 _ 东方财富网
+2025-12-31 13:13:06.345 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606793970.html: 
+2025-12-31 13:13:06.345 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606794059.html
+2025-12-31 13:13:21.356 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606794059.html: 
+2025-12-31 13:13:21.356 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606800313.html
+2025-12-31 13:13:37.356 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606800313.html: 
+2025-12-31 13:13:37.356 | INFO     | core.crawler:process_url:41 - Downloading signal: http://hk.eastmoney.com/a/202512313606791696.html
+2025-12-31 13:13:48.607 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606790765.html
+2025-12-31 13:13:49.157 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 港股2025年收官：恒指全年涨27.77% 恒...
+2025-12-31 13:13:49.158 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 港股2025年收官：恒指全年涨27.77% 恒生科技指数今年涨幅创历史最佳 _ 东方财富网
+2025-12-31 13:13:59.183 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606790056.html
+2025-12-31 13:13:59.184 | INFO     | core.engine:fast_path_filter:56 - ⚡ [Fast Path] Keyword Bypass | Title: 工行、农行：2026年1月...
+2025-12-31 13:13:59.185 | INFO     | __main__:consumer:52 - ⚡ Entering Slow Path: Title: 工行、农行：2026年1月1日起为数字人民币实名钱包余额计付利息 _ 东方财富网
+2025-12-31 13:14:09.377 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606789244.html
+2025-12-31 13:14:23.850 | SUCCESS  | __main__:consumer:57 - 🎯 Signal Extracted: Score -3 | ['601398.SH', '601288.SH', '601698.SH', '600036.SH', '300664.SZ']
+2025-12-31 13:14:24.158 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 五部门：各地要科学制定补贴资金使用及兑付计划 ...
+2025-12-31 13:14:24.159 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 五部门：各地要科学制定补贴资金使用及兑付计划 减轻政策参与经营主体垫资压力 _ 东方财富网
+2025-12-31 13:14:25.353 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606789244.html: 
+2025-12-31 13:14:25.354 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606788569.html
+2025-12-31 13:14:41.350 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606788569.html: 
+2025-12-31 13:14:41.352 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606788075.html
+2025-12-31 13:14:57.361 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606788075.html: 
+2025-12-31 13:14:57.362 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606787931.html
+2025-12-31 13:15:13.350 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606787931.html: 
+2025-12-31 13:15:13.350 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606787663.html
+2025-12-31 13:15:28.358 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606787663.html: 
+2025-12-31 13:15:28.409 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606787767.html
+2025-12-31 13:15:44.341 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606787767.html: 
+2025-12-31 13:15:44.342 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606787844.html
+2025-12-31 13:15:59.349 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606787844.html: 
+2025-12-31 13:15:59.349 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606786825.html
+2025-12-31 13:16:08.212 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606786610.html
+2025-12-31 13:16:08.683 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 多地金融市场今日提前休市 _ 东方财富网...
+2025-12-31 13:16:08.687 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 多地金融市场今日提前休市 _ 东方财富网
+2025-12-31 13:16:20.575 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606786532.html
+2025-12-31 13:16:20.909 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 转给爸妈！微信、支付宝辟谣了 _ 东方财富网...
+2025-12-31 13:16:20.910 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 转给爸妈！微信、支付宝辟谣了 _ 东方财富网
+2025-12-31 13:16:27.994 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606785112.html
+2025-12-31 13:16:28.406 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 香港恒生指数下跌1%至25,595.56点 _...
+2025-12-31 13:16:28.406 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 香港恒生指数下跌1%至25,595.56点 _ 东方财富网
+2025-12-31 13:16:38.598 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606784415.html
+2025-12-31 13:16:38.600 | INFO     | core.engine:fast_path_filter:56 - ⚡ [Fast Path] Keyword Bypass | Title: 沪指下跌0.07% AI应...
+2025-12-31 13:16:38.601 | INFO     | __main__:consumer:52 - ⚡ Entering Slow Path: Title: 沪指下跌0.07% AI应用涨幅居前 航天航空板块持续走强 _ 东方财富网
+2025-12-31 13:16:47.943 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606783980.html
+2025-12-31 13:16:55.468 | SUCCESS  | __main__:consumer:57 - 🎯 Signal Extracted: Score 3 | ['600519.SH', '002230.SZ', '600118.SH', '000768.SZ']
+2025-12-31 13:16:55.697 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 中国卫星触及涨停 _ 东方财富网...
+2025-12-31 13:16:55.698 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 中国卫星触及涨停 _ 东方财富网
+2025-12-31 13:17:03.363 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606783980.html: 
+2025-12-31 13:17:03.363 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606783555.html
+2025-12-31 13:17:12.926 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606782845.html
+2025-12-31 13:17:13.437 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 日韩休市 澳洲标普200指数今年累计涨6.8%...
+2025-12-31 13:17:13.438 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 日韩休市 澳洲标普200指数今年累计涨6.8% _ 东方财富网
+2025-12-31 13:17:28.357 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606782845.html: 
+2025-12-31 13:17:28.358 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606781182.html
+2025-12-31 13:17:38.944 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606780119.html
+2025-12-31 13:17:39.496 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 赛力斯公布车内乘客睡眠质量提升专利 _ 东方财...
+2025-12-31 13:17:39.496 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 赛力斯公布车内乘客睡眠质量提升专利 _ 东方财富网
+2025-12-31 13:17:54.350 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606780119.html: 
+2025-12-31 13:17:54.351 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606779423.html
+2025-12-31 13:18:02.622 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606777913.html
+2025-12-31 13:18:02.983 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 韩媒：李在镕等200多名韩国企业家将随李在明访...
+2025-12-31 13:18:03.016 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 韩媒：李在镕等200多名韩国企业家将随李在明访华 _ 东方财富网
+2025-12-31 13:18:18.362 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606777913.html: 
+2025-12-31 13:18:18.363 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606777061.html
+2025-12-31 13:18:27.093 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606776617.html
+2025-12-31 13:18:27.718 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 中国汽车流通协会：2026年的汽车以旧换新政策...
+2025-12-31 13:18:27.719 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 中国汽车流通协会：2026年的汽车以旧换新政策有望持续激发消费活力 为汽车产业转型升级和高质量发展增添新动力 _ 东方财富网
+2025-12-31 13:18:42.351 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606776617.html: 
+2025-12-31 13:18:42.360 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606774759.html
+2025-12-31 13:18:49.126 | INFO     | core.crawler:process_url:41 - Downloading signal: http://hk.eastmoney.com/a/202512313606773886.html
+2025-12-31 13:18:49.567 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 蓝色光标触及20cm涨停 _ 东方财富网...
+2025-12-31 13:18:49.567 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 蓝色光标触及20cm涨停 _ 东方财富网
+2025-12-31 13:18:59.209 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606772869.html
+2025-12-31 13:18:59.594 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 小鹏成功注册“铁人”商标 _ 东方财富网...
+2025-12-31 13:18:59.594 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 小鹏成功注册“铁人”商标 _ 东方财富网
+2025-12-31 13:19:14.347 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606772869.html: 
+2025-12-31 13:19:14.349 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606771730.html
+2025-12-31 13:19:24.742 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606770538.html
+2025-12-31 13:19:25.213 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 微纳星空新专利可自动控制卫星的运行 _ 东方财...
+2025-12-31 13:19:25.213 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 微纳星空新专利可自动控制卫星的运行 _ 东方财富网
+2025-12-31 13:19:33.200 | INFO     | __main__:producer:34 - 📡 Producer finished fetching all URLs.
+2025-12-31 13:19:33.748 | INFO     | core.engine:fast_path_filter:81 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 625亿元！2026年第一批以旧换新资金计划已...
+2025-12-31 13:19:33.750 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 625亿元！2026年第一批以旧换新资金计划已向地方下达 _ 东方财富网
+2025-12-31 13:20:33.214 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:20:33.647 | INFO     | core.monitor:harvest:104 - 📡 Radar detected 7 new signals.
+2025-12-31 13:20:33.649 | INFO     | __main__:main_loop:104 - 📥 Feeding 7 URLs to pipeline...
+2025-12-31 13:20:33.650 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606828567.html
+2025-12-31 13:20:49.364 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606828567.html: 
+2025-12-31 13:20:49.364 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606827850.html
+2025-12-31 13:20:58.623 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606824060.html
+2025-12-31 13:21:05.740 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606822487.html
+2025-12-31 13:21:21.349 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606822487.html: 
+2025-12-31 13:21:21.351 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606815953.html
+2025-12-31 13:21:36.351 | ERROR    | core.crawler:process_url:54 - Signal Loss for http://finance.eastmoney.com/a/202512313606815953.html: 
+2025-12-31 13:21:36.352 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606816070.html
+2025-12-31 13:21:50.644 | INFO     | core.crawler:process_url:41 - Downloading signal: http://finance.eastmoney.com/a/202512313606820162.html
+2025-12-31 13:22:01.494 | INFO     | __main__:producer:34 - 📡 Producer finished fetching all URLs.
+2025-12-31 13:34:11.541 | INFO     | __main__:main_loop:88 - 🚀 FinNewsMasterV1: AUTO-PILOT MODE ENGAGED
+2025-12-31 13:34:11.543 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:34:11.954 | INFO     | core.monitor:harvest:93 - 📡 Radar V3 detected 15 signals.
+2025-12-31 13:34:11.955 | INFO     | __main__:main_loop:104 - 📥 Feeding 15 URLs to pipeline...
+2025-12-31 13:34:11.957 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3815437.d.html
+2025-12-31 13:34:27.357 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3815437.d.html: 
+2025-12-31 13:34:27.358 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqs3784851.d.html
+2025-12-31 13:34:33.946 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3815123.d.html
+2025-12-31 13:34:38.672 | INFO     | core.engine:fast_path_filter:83 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 钯金期货日内跌10%，现报1551.00美元/...
+2025-12-31 13:34:38.673 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 钯金期货日内跌10%，现报1551.00美元/盎司。
+2025-12-31 13:34:49.348 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3815123.d.html: 
+2025-12-31 13:34:49.349 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5325797.d.html
+2025-12-31 13:35:20.360 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5325797.d.html: 
+2025-12-31 13:35:20.362 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5325722.d.html
+2025-12-31 13:35:36.355 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5325722.d.html: 
+2025-12-31 13:35:36.355 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3813983.d.html
+2025-12-31 13:35:42.557 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5324772.d.html
+2025-12-31 13:35:43.141 | INFO     | core.engine:fast_path_filter:83 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 秘鲁南部火车相撞事故致4名中国游客受伤...
+2025-12-31 13:35:43.142 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 秘鲁南部火车相撞事故致4名中国游客受伤
+2025-12-31 13:35:58.348 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5324772.d.html: 
+2025-12-31 13:35:58.349 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3812957.d.html
+2025-12-31 13:36:13.356 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3812957.d.html: 
+2025-12-31 13:36:13.356 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3812920.d.html
+2025-12-31 13:36:29.357 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3812920.d.html: 
+2025-12-31 13:36:29.357 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqs3780977.d.html
+2025-12-31 13:36:45.350 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqs3780977.d.html: 
+2025-12-31 13:36:45.358 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3809416.d.html
+2025-12-31 13:37:01.347 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3809416.d.html: 
+2025-12-31 13:37:01.348 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqq9133783.d.html
+2025-12-31 13:37:10.216 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqs3775018.d.html
+2025-12-31 13:37:10.942 | INFO     | core.engine:fast_path_filter:83 - 🔍 [Fast Path] Model said: '' -> Noise | Title: Title: 去哪儿旅行CEO陈刚：春节放假提前一天，新增子...
+2025-12-31 13:37:10.943 | INFO     | __main__:consumer:59 - 🗑️ Discarding Noise: Title: 去哪儿旅行CEO陈刚：春节放假提前一天，新增子女陪伴假3天及生育福利
+2025-12-31 13:37:25.357 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqs3775018.d.html: 
+2025-12-31 13:37:25.362 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5317863.d.html
+2025-12-31 13:37:41.352 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5317863.d.html: 
+2025-12-31 13:37:41.355 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqn6697569.d.html
+2025-12-31 13:37:50.957 | INFO     | __main__:producer:34 - 📡 Producer finished fetching all URLs.
+2025-12-31 13:37:50.957 | INFO     | core.engine:fast_path_filter:58 - ⚡ [Fast Path] Keyword Bypass | Title: 中国卫通午后涨停，走出4天...
+2025-12-31 13:37:50.961 | INFO     | __main__:consumer:52 - ⚡ Entering Slow Path: Title: 中国卫通午后涨停，走出4天2板，续创历史新高，总市值突破1500亿。
+2025-12-31 13:38:05.961 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:38:06.232 | INFO     | core.monitor:harvest:93 - 📡 Radar V3 detected 4 signals.
+2025-12-31 13:38:06.234 | INFO     | __main__:main_loop:104 - 📥 Feeding 4 URLs to pipeline...
+2025-12-31 13:38:06.234 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqs3788181.d.html
+2025-12-31 13:38:11.739 | WARNING  | core.engine:slow_path_analyze:148 - [Slow Path] Parse Error: 1 validation error for SignalAnalysis
+time_horizon
+  Input should be 'Short', 'Medium' or 'Long' [type=literal_error, input_value='Short to Medium', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/literal_error
+2025-12-31 13:38:21.354 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqs3788181.d.html: 
+2025-12-31 13:38:21.358 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5328283.d.html
+2025-12-31 13:38:27.914 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5327338.d.html
+2025-12-31 13:38:43.356 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5327338.d.html: 
+2025-12-31 13:38:43.357 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqq9143222.d.html
+2025-12-31 13:38:53.105 | INFO     | __main__:producer:34 - 📡 Producer finished fetching all URLs.
+2025-12-31 13:39:08.114 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:39:08.401 | INFO     | core.monitor:harvest:93 - 📡 Radar V3 detected 2 signals.
+2025-12-31 13:39:08.403 | INFO     | __main__:main_loop:104 - 📥 Feeding 2 URLs to pipeline...
+2025-12-31 13:39:08.407 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5329243.d.html
+2025-12-31 13:39:14.998 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqq9146197.d.html
+2025-12-31 13:39:30.347 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqq9146197.d.html: 
+2025-12-31 13:39:30.349 | INFO     | __main__:producer:34 - 📡 Producer finished fetching all URLs.
+2025-12-31 13:39:45.348 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:39:45.587 | INFO     | core.monitor:harvest:93 - 📡 Radar V3 detected 2 signals.
+2025-12-31 13:39:45.588 | INFO     | __main__:main_loop:104 - 📥 Feeding 2 URLs to pipeline...
+2025-12-31 13:39:45.588 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5330081.d.html
+2025-12-31 13:39:51.331 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3818809.d.html
+2025-12-31 13:40:07.358 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3818809.d.html: 
+2025-12-31 13:40:07.360 | INFO     | __main__:producer:34 - 📡 Producer finished fetching all URLs.
+2025-12-31 13:40:22.378 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:40:22.672 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:40:37.681 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:40:38.312 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:40:53.431 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:40:53.678 | INFO     | core.monitor:harvest:93 - 📡 Radar V3 detected 1 signals.
+2025-12-31 13:40:53.681 | INFO     | __main__:main_loop:104 - 📥 Feeding 1 URLs to pipeline...
+2025-12-31 13:40:53.682 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqs3790630.d.html
+2025-12-31 13:41:01.858 | INFO     | __main__:producer:34 - 📡 Producer finished fetching all URLs.
+2025-12-31 13:41:16.868 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:41:17.088 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:41:32.093 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:41:32.331 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:41:47.345 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:41:47.582 | INFO     | core.monitor:harvest:93 - 📡 Radar V3 detected 1 signals.
+2025-12-31 13:41:47.584 | INFO     | __main__:main_loop:104 - 📥 Feeding 1 URLs to pipeline...
+2025-12-31 13:41:47.585 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5331614.d.html
+2025-12-31 13:42:03.342 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5331614.d.html: 
+2025-12-31 13:42:03.343 | INFO     | __main__:producer:34 - 📡 Producer finished fetching all URLs.
+2025-12-31 13:42:18.387 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:42:18.629 | INFO     | core.monitor:harvest:93 - 📡 Radar V3 detected 3 signals.
+2025-12-31 13:42:18.645 | INFO     | __main__:main_loop:104 - 📥 Feeding 3 URLs to pipeline...
+2025-12-31 13:42:18.666 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5332152.d.html
+2025-12-31 13:42:34.354 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5332152.d.html: 
+2025-12-31 13:42:34.359 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3820937.d.html
+2025-12-31 13:42:50.354 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3820937.d.html: 
+2025-12-31 13:42:50.355 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqq9149420.d.html
+2025-12-31 13:43:06.350 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqq9149420.d.html: 
+2025-12-31 13:43:06.351 | INFO     | __main__:producer:34 - 📡 Producer finished fetching all URLs.
+2025-12-31 13:43:21.348 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:43:21.651 | INFO     | core.monitor:harvest:93 - 📡 Radar V3 detected 3 signals.
+2025-12-31 13:43:21.685 | INFO     | __main__:main_loop:104 - 📥 Feeding 3 URLs to pipeline...
+2025-12-31 13:43:21.688 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqq9150121.d.html
+2025-12-31 13:43:37.349 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqq9150121.d.html: 
+2025-12-31 13:43:37.352 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5332156.d.html
+2025-12-31 13:43:46.258 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqs3791724.d.html
+2025-12-31 13:44:01.361 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqs3791724.d.html: 
+2025-12-31 13:44:01.362 | INFO     | __main__:producer:34 - 📡 Producer finished fetching all URLs.
+2025-12-31 13:44:16.373 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:44:16.682 | INFO     | core.monitor:harvest:93 - 📡 Radar V3 detected 1 signals.
+2025-12-31 13:44:16.684 | INFO     | __main__:main_loop:104 - 📥 Feeding 1 URLs to pipeline...
+2025-12-31 13:44:16.685 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3821987.d.html
+2025-12-31 13:44:25.221 | INFO     | __main__:producer:34 - 📡 Producer finished fetching all URLs.
+2025-12-31 13:44:40.234 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:44:40.531 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:44:55.545 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:44:55.734 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:45:10.743 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:45:10.955 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:45:25.980 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:45:26.177 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:45:41.181 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:45:41.440 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:45:56.445 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:45:56.658 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:46:11.670 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:46:12.061 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:46:27.157 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:46:27.490 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:46:42.585 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:46:42.881 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:46:57.892 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:46:58.107 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:47:13.120 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:47:13.387 | INFO     | core.monitor:harvest:93 - 📡 Radar V3 detected 1 signals.
+2025-12-31 13:47:13.394 | INFO     | __main__:main_loop:104 - 📥 Feeding 1 URLs to pipeline...
+2025-12-31 13:47:13.395 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5335711.d.html
+2025-12-31 13:47:29.350 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5335711.d.html: 
+2025-12-31 13:47:29.363 | INFO     | __main__:producer:34 - 📡 Producer finished fetching all URLs.
+2025-12-31 13:47:44.391 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:47:44.659 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:47:59.674 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:47:59.883 | INFO     | core.monitor:harvest:93 - 📡 Radar V3 detected 1 signals.
+2025-12-31 13:47:59.883 | INFO     | __main__:main_loop:104 - 📥 Feeding 1 URLs to pipeline...
+2025-12-31 13:47:59.885 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5336298.d.html
+2025-12-31 13:48:15.365 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5336298.d.html: 
+2025-12-31 13:48:15.370 | INFO     | __main__:producer:34 - 📡 Producer finished fetching all URLs.
+2025-12-31 13:48:30.369 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:48:30.683 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:48:45.698 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:48:46.235 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:49:01.285 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:49:01.475 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:49:16.493 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:49:16.711 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:49:31.733 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:49:31.940 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:49:46.956 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:49:47.210 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:50:02.223 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:50:02.437 | INFO     | core.monitor:harvest:93 - 📡 Radar V3 detected 2 signals.
+2025-12-31 13:50:02.438 | INFO     | __main__:main_loop:104 - 📥 Feeding 2 URLs to pipeline...
+2025-12-31 13:50:02.439 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5337935.d.html
+2025-12-31 13:50:18.356 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5337935.d.html: 
+2025-12-31 13:50:18.357 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqs3796210.d.html
+2025-12-31 13:50:34.366 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqs3796210.d.html: 
+2025-12-31 13:50:34.368 | INFO     | __main__:producer:34 - 📡 Producer finished fetching all URLs.
+2025-12-31 13:50:49.387 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:50:49.635 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:51:04.646 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:51:04.827 | INFO     | core.monitor:harvest:93 - 📡 Radar V3 detected 2 signals.
+2025-12-31 13:51:04.827 | INFO     | __main__:main_loop:104 - 📥 Feeding 2 URLs to pipeline...
+2025-12-31 13:51:04.829 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqs3796769.d.html
+2025-12-31 13:51:20.355 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqs3796769.d.html: 
+2025-12-31 13:51:20.356 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqq9154502.d.html
+2025-12-31 13:51:36.350 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqq9154502.d.html: 
+2025-12-31 13:51:36.351 | INFO     | __main__:producer:34 - 📡 Producer finished fetching all URLs.
+2025-12-31 13:51:51.358 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:51:51.612 | INFO     | core.monitor:harvest:93 - 📡 Radar V3 detected 2 signals.
+2025-12-31 13:51:51.614 | INFO     | __main__:main_loop:104 - 📥 Feeding 2 URLs to pipeline...
+2025-12-31 13:51:51.615 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqq9154763.d.html
+2025-12-31 13:51:58.864 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3827368.d.html
+2025-12-31 13:52:04.801 | INFO     | __main__:producer:34 - 📡 Producer finished fetching all URLs.
+2025-12-31 13:52:19.803 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:52:20.035 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:52:35.042 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:52:35.253 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:52:50.265 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:52:50.503 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:53:05.540 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:53:05.787 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:53:20.797 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:53:20.996 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:53:36.009 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:53:36.205 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:53:51.213 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:53:51.424 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:54:06.433 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:54:06.699 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:54:21.727 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:54:21.946 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:54:36.953 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:54:37.231 | INFO     | core.monitor:harvest:93 - 📡 Radar V3 detected 3 signals.
+2025-12-31 13:54:37.236 | INFO     | __main__:main_loop:104 - 📥 Feeding 3 URLs to pipeline...
+2025-12-31 13:54:37.237 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3829827.d.html
+2025-12-31 13:54:52.357 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3829827.d.html: 
+2025-12-31 13:54:52.361 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqq9156588.d.html
+2025-12-31 13:55:08.358 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqq9156588.d.html: 
+2025-12-31 13:55:08.360 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3829679.d.html
+2025-12-31 13:55:24.359 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3829679.d.html: 
+2025-12-31 13:55:24.361 | INFO     | __main__:producer:34 - 📡 Producer finished fetching all URLs.
+2025-12-31 13:55:39.369 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:55:39.700 | INFO     | core.monitor:harvest:93 - 📡 Radar V3 detected 4 signals.
+2025-12-31 13:55:39.702 | INFO     | __main__:main_loop:104 - 📥 Feeding 4 URLs to pipeline...
+2025-12-31 13:55:39.702 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5341304.d.html
+2025-12-31 13:55:55.353 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5341304.d.html: 
+2025-12-31 13:55:55.353 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3829976.d.html
+2025-12-31 13:56:10.362 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3829976.d.html: 
+2025-12-31 13:56:10.363 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5341158.d.html
+2025-12-31 13:56:26.350 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5341158.d.html: 
+2025-12-31 13:56:26.350 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5341159.d.html
+2025-12-31 13:56:32.942 | INFO     | __main__:producer:34 - 📡 Producer finished fetching all URLs.
+2025-12-31 13:56:47.946 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:56:48.290 | INFO     | core.monitor:harvest:93 - 📡 Radar V3 detected 3 signals.
+2025-12-31 13:56:48.293 | INFO     | __main__:main_loop:104 - 📥 Feeding 3 URLs to pipeline...
+2025-12-31 13:56:48.294 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqq9157734.d.html
+2025-12-31 13:57:03.360 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqq9157734.d.html: 
+2025-12-31 13:57:03.361 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqv3831171.d.html
+2025-12-31 13:57:09.345 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqq9157187.d.html
+2025-12-31 13:57:24.363 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqq9157187.d.html: 
+2025-12-31 13:57:24.365 | INFO     | __main__:producer:34 - 📡 Producer finished fetching all URLs.
+2025-12-31 13:57:39.367 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:57:39.586 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:57:54.593 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:57:54.873 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:58:09.889 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:58:10.080 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:58:25.096 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:58:25.280 | INFO     | core.monitor:harvest:93 - 📡 Radar V3 detected 1 signals.
+2025-12-31 13:58:25.282 | INFO     | __main__:main_loop:104 - 📥 Feeding 1 URLs to pipeline...
+2025-12-31 13:58:25.284 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5343666.d.html
+2025-12-31 13:58:32.292 | INFO     | __main__:producer:34 - 📡 Producer finished fetching all URLs.
+2025-12-31 13:58:47.308 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:58:47.507 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:59:02.527 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:59:02.823 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:59:17.837 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:59:18.045 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 13:59:33.062 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 13:59:33.320 | INFO     | core.monitor:harvest:93 - 📡 Radar V3 detected 2 signals.
+2025-12-31 13:59:33.323 | INFO     | __main__:main_loop:104 - 📥 Feeding 2 URLs to pipeline...
+2025-12-31 13:59:33.323 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5344551.d.html
+2025-12-31 13:59:40.134 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqs3801773.d.html
+2025-12-31 13:59:55.354 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqs3801773.d.html: 
+2025-12-31 13:59:55.355 | INFO     | __main__:producer:34 - 📡 Producer finished fetching all URLs.
+2025-12-31 14:00:10.364 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 14:00:10.607 | INFO     | core.monitor:harvest:93 - 📡 Radar V3 detected 1 signals.
+2025-12-31 14:00:10.610 | INFO     | __main__:main_loop:104 - 📥 Feeding 1 URLs to pipeline...
+2025-12-31 14:00:10.610 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5344871.d.html
+2025-12-31 14:00:22.422 | INFO     | __main__:producer:34 - 📡 Producer finished fetching all URLs.
+2025-12-31 14:00:37.429 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 14:00:37.637 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 14:00:52.642 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 14:00:52.869 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 14:01:07.880 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 14:01:08.074 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 14:01:23.086 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 14:01:23.329 | INFO     | __main__:main_loop:107 - 💤 No new signals. Standing by.
+2025-12-31 14:01:38.335 | INFO     | __main__:main_loop:99 - 📡 Scanning markets for new intelligence...
+2025-12-31 14:01:38.517 | INFO     | core.monitor:harvest:93 - 📡 Radar V3 detected 2 signals.
+2025-12-31 14:01:38.519 | INFO     | __main__:main_loop:104 - 📥 Feeding 2 URLs to pipeline...
+2025-12-31 14:01:38.520 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5345715.d.html
+2025-12-31 14:18:14.485 | ERROR    | core.crawler:process_url:54 - Signal Loss for https://finance.sina.cn/7x24/2025-12-31/detail-inheshqt5345715.d.html: 
+2025-12-31 14:18:14.486 | INFO     | core.crawler:process_url:41 - Downloading signal: https://finance.sina.cn/7x24/2025-12-31/detail-inheshqs3803007.d.html
+2025-12-31 14:18:24.194 | INFO     | __main__:producer:34 - 📡 Producer finished fetching all URLs.

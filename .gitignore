@@ -1,0 +1,32 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 本地缓存目录（如果有其他缓存目录，可按需补充）
+cache/
+.cache/
+
+config/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+
+core/__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# 不纳入版本控制的数据原始文件
+data/raw/
+
+# 常见虚拟环境
+venv/
+.venv/
+
+# IDE 配置
+.idea/
+.vscode/
+.trae/
+
