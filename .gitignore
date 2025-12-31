@@ -20,11 +20,12 @@ core/__pycache__/
 
 # 不纳入版本控制的数据原始文件
 data/raw/
+data/signals/
 
 # 常见虚拟环境
 venv/
 .venv/
-.env/
+.env
 
 # IDE 配置
 .idea/
