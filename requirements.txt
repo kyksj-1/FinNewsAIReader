@@ -7,3 +7,4 @@ tenacity>=8.2.0
 feedparser>=6.0.10
 numpy>=1.24.0
 python-dotenv>=1.0.0
+pandas>=2.0.0

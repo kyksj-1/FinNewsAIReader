@@ -3,7 +3,8 @@ import asyncio
 import json
 import re
 import subprocess
-from typing import Optional
+import numpy as np
+from typing import Optional, List
 from loguru import logger
 from config.settings import settings
 from core.schema import NewsPayload, SignalAnalysis
@@ -142,29 +143,32 @@ class LLMEngine:
         "融资", "证券", "大盘", "指数", "成交额", "北向", "外资", "特斯拉", "宁德时代"
         ]
         if any(k in news.title for k in keywords):
-            logger.info(f"⚡ [Fast Path] Keyword Bypass | {news.title[:20]}...")
+            logger.info(f"⚡ [Fast Path] Keyword Bypass | {news.title[:60]}...")
             return True
 
         # 2. LLM 判别
         prompt = f"""
-        你是A股量化交易员。判断以下新闻标题是否属于"金融、宏观经济、股市、科技、政策"范畴。
+        判断标题是否与"金融/经济/科技"相关:
+        {news.title}
         
-        标题："{news.title}"
-        
-        如果是，请回答"是"。
-        如果完全无关（如娱乐、体育、纯八卦、小型社会事件等），请回答"否"。
-        只回答一个字。
+        只回答"是"或"否",一个字。
         """
-        res = await self.call_model(prompt, temp=settings.TEMP_FAST, max_tokens=64)
+        
+        # 降低温度提高确定性
+        res = await self.call_model(prompt, temp=0.1, max_tokens=10)
         clean_res = res.strip().upper()
         
         # 修改点：打印原始回复，看看它到底想说什么
         logger.debug(f"Raw Model Response: {clean_res}")
         
-
-        
         # 3. 宽松判别逻辑
-        is_relevant = "是" in clean_res or "Yes" in clean_res or "相关" in clean_res
+        is_relevant = (
+            "是" in clean_res or 
+            "YES" in clean_res or 
+            "相关" in clean_res or
+            "Y" == clean_res or
+            "TRUE" in clean_res
+        )
         
         status = "Relevant" if is_relevant else "Noise"
         # 关键：打印出模型到底说了什么，方便调试
@@ -173,11 +177,10 @@ class LLMEngine:
         )
         return is_relevant
 
-    async def slow_path_analyze(self, news: NewsPayload) -> Optional[SignalAnalysis]:
+    async def _single_analyze(self, news: NewsPayload, temp: float) -> Optional[SignalAnalysis]:
         """
-        慢通道：深度思维链分析 (System 2 Reasoning)
+        单次深度分析
         """
-        # 增加 max_tokens，给思考留出空间
         max_tokens_limit = 4096 
         safe_content = news.content[:6000] if news.content else ""
         
@@ -196,7 +199,16 @@ class LLMEngine:
            - 结合当前宏观环境（流动性、政策周期）评估信号强度。
            - 推导最终的 Score。
 
-        2. **Output Format**:
+        2. **强制自我校验**:
+           在给出最终score前,必须回答:
+           - 这个score是否过度依赖单一信息源?
+           - 若关键假设不成立,score会降到多少?
+           - 历史上类似事件的实际市场反应是?
+
+        3. **Confidence Interval**:
+           除了给出score,还要给出90%置信区间。
+
+        4. **Output Format**:
            思考结束后，输出严格的 JSON。
            
         [Example Output]
@@ -205,17 +217,19 @@ class LLMEngine:
         1. 事件核心是...
         2. 传导路径是...
         3. 市场预期在于...
+        4. 自我校验：该信号依赖...若...则...
         </think>
         {{
             "reasoning": "总结上述思考的简练结论...",
             "score": 7,
             "certainty": 8,
+            "confidence_range": [5, 8],
             "related_stocks": ["sh.600XXX"],
             "time_horizon": "Medium"
         }}
         """
-        # 调高一点温度，实现发散性
-        raw_res = await self.call_model(prompt, temp=settings.TEMP_SLOW, max_tokens=max_tokens_limit)
+        
+        raw_res = await self.call_model(prompt, temp=temp, max_tokens=max_tokens_limit)
         raw_res = raw_res.replace("```json", "").replace("```", "")
         try:
             match = re.search(r"\{.*\}", raw_res, re.DOTALL)
@@ -227,5 +241,107 @@ class LLMEngine:
             return analysis
             
         except Exception as e:
-            logger.warning(f"[Slow Path] Parse Error: {e}")
+            logger.warning(f"[Single Analyze] Parse Error: {e}")
             return None
+
+    async def ensemble_analyze(self, news: NewsPayload) -> Optional[SignalAnalysis]:
+        """
+        用不同温度/模型跑3次,取中位数
+        物理直觉:多次测量求平均值
+        """
+        results = []
+        temps = [0.1, 0.5, 0.7]  # 三个温度档位
+        
+        # 并发执行多次分析
+        tasks = [self._single_analyze(news, temp) for temp in temps]
+        results_raw = await asyncio.gather(*tasks)
+        
+        # 过滤失败的结果
+        results = [r for r in results_raw if r is not None]
+        
+        if not results:
+            return None
+            
+        if len(results) >= 2:
+            # 取中位数score和certainty
+            scores = [r.score for r in results]
+            certainties = [r.certainty for r in results]
+            
+            # 选择最详细的 reasoning (或者最长的)
+            best_reasoning = max(results, key=lambda x: len(x.reasoning)).reasoning
+            
+            # 合并相关股票 (去重)
+            all_stocks = set()
+            for r in results:
+                all_stocks.update(r.related_stocks)
+            
+            # 计算置信区间 (取所有结果的最小值和最大值作为保守估计)
+            all_ranges = [r.confidence_range for r in results if r.confidence_range]
+            if all_ranges:
+                min_conf = min(r[0] for r in all_ranges)
+                max_conf = max(r[1] for r in all_ranges)
+                final_conf_range = [min_conf, max_conf]
+            else:
+                final_conf_range = results[0].confidence_range
+
+            return SignalAnalysis(
+                source_url=news.url,
+                score=int(np.median(scores)),
+                certainty=int(np.median(certainties)),
+                confidence_range=final_conf_range,
+                reasoning=best_reasoning,
+                related_stocks=list(all_stocks),
+                time_horizon=results[0].time_horizon # 假设时间尺度一致，或者应该投票
+            )
+        
+        return results[0]
+
+    async def adversarial_validate(self, analysis: SignalAnalysis) -> float:
+        """
+        让模型扮演反方,挑战原分析的漏洞
+        返回信心修正系数 (0.5~1.0)
+        """
+        challenge_prompt = f"""
+        原分析给出评分 {analysis.score}/10,理由是:
+        {analysis.reasoning}
+        
+        请你作为魔鬼代言人,指出这个分析可能存在的3个最大问题:
+        1. 忽略的反向因素
+        2. 过度解读的部分
+        3. 时间尺度是否合理
+        
+        请仔细思考。如果认为原分析有严重错误或重大遗漏，请明确指出。
+        """
+        
+        critique = await self.call_model(challenge_prompt, temp=0.7, max_tokens=1024)
+        
+        # 简单解析:如果提出严重质疑,降低certainty
+        # 这里的判断逻辑比较简单，可以后续优化
+        if "严重" in critique or "错误" in critique or "忽略" in critique:
+            return 0.7
+        return 0.95
+
+    async def slow_path_analyze(self, news: NewsPayload) -> Optional[SignalAnalysis]:
+        """
+        慢通道：深度思维链分析 (System 2 Reasoning)
+        现在集成了 Ensemble 和 Adversarial Validation
+        """
+        # 1. Ensemble Analysis
+        analysis = await self.ensemble_analyze(news)
+        if not analysis:
+            return None
+            
+        # 2. Adversarial Validation
+        # 只有当信号比较强时才值得进行对抗验证，节省Token
+        if abs(analysis.score) >= 5 and analysis.certainty >= 6:
+             logger.info(f"🛡️ Running Adversarial Validation for {news.title[:20]}...")
+             confidence_modifier = await self.adversarial_validate(analysis)
+             
+             # 修正 certainty
+             original_certainty = analysis.certainty
+             analysis.certainty = int(original_certainty * confidence_modifier)
+             
+             if analysis.certainty != original_certainty:
+                 logger.info(f"📉 Certainty adjusted from {original_certainty} to {analysis.certainty} after adversarial check.")
+
+        return analysis

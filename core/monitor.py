@@ -8,14 +8,30 @@ from loguru import logger
 
 class NewsMonitor:
     """
-    雷达模块 v4 (Ultimate): RSS矩阵 + API直连
+    雷达模块 v5: 增加直接API抓取 + 统计功能
     """
     def __init__(self):
         self.seen_urls: Set[str] = set()
+        self.stats = {
+            'total_scanned': 0,
+            'new_urls': 0,
+            'rss_success': 0,
+            'rss_failed': 0
+        }
         self.headers = {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
         }
         
+        # ===== 新增: 直接API源 ===== 
+        # 这些返回JSON,不经过RSS, 直接作为URL交给Crawler的JSON解析器处理
+        self.api_sources = [
+            # 东方财富快讯 (每次返回50条)
+            "https://newsapi.eastmoney.com/kuaixun/v1/getlist_102_ajaxResult_50_1_.html",
+            
+            # 新浪财经7x24 (可调整page_size)
+            "https://zhibo.sina.com.cn/api/zhibo/feed?page=1&page_size=30&zhibo_id=152",
+        ]
+
         # === 核心资产：这是你要的“足够多的网站” ===
         # 这些是标准 RSS 链接，直接能用，无需插件
         self.rss_sources = [
@@ -69,60 +85,53 @@ class NewsMonitor:
                     if link and link.startswith('http') and link not in self.seen_urls:
                         new_links.append(link)
                         self.seen_urls.add(link)
+                
+                if new_links:
+                    self.stats['rss_success'] += 1
                         
         except Exception as e:
+            self.stats['rss_failed'] += 1
             # RSS 偶尔连接超时很正常，不用 print stack trace，太吵
             logger.warning(f"RSS Feed requires check: {url} | {str(e)[:50]}")
         
         return new_links
 
-    async def scan_sina_7x24(self, session: aiohttp.ClientSession) -> List[str]:
-        # (保留你之前的代码，这是个好接口)
-        ts = int(time.time() * 1000)
-        api_url = f"https://zhibo.sina.com.cn/api/zhibo/feed?callback=&page=1&page_size=20&zhibo_id=152&tag_id=0&dire=f&dpc=1&type=0&_={ts}"
-        new_links = []
+    async def scan_api_endpoint(self, session: aiohttp.ClientSession, api_url: str) -> List[str]:
+        """
+        扫描返回JSON的API接口
+        返回的不是URL列表,而是直接把API地址加入队列
+        (因为这些API本身就是数据源)
+        """
         try:
             async with session.get(api_url, headers=self.headers, timeout=10) as resp:
-                text = await resp.text()
-                data = json.loads(text)
-                items = data.get('result', {}).get('data', {}).get('feed', {}).get('list', [])
-                for item in items:
-                    url = item.get('docurl')
-                    if url and url not in self.seen_urls:
-                        new_links.append(url)
-                        self.seen_urls.add(url)
-        except Exception: pass
-        return new_links
-
-    async def scan_eastmoney_kuaixun(self, session: aiohttp.ClientSession) -> List[str]:
-        # (保留你之前的代码)
-        api_url = "https://newsapi.eastmoney.com/kuaixun/v1/getlist_102_ajaxResult_50_1_.html"
-        new_links = []
-        try:
-            async with session.get(api_url, headers=self.headers, timeout=10) as resp:
-                text = await resp.text()
-                try:
-                    json_str = text[text.find('{'):text.rfind('}')+1]
-                    data = json.loads(json_str)
-                    for item in data.get('LivesList', []):
-                        url = item.get('url_unique')
-                        if url and url not in self.seen_urls:
-                            new_links.append(url)
-                            self.seen_urls.add(url)
-                except: pass
-        except Exception: pass
-        return new_links
+                if resp.status == 200:
+                    # 对于API URL，我们不根据内容去重（因为内容会变），而是总是允许它被处理
+                    # 但是为了防止 pipeline 过于拥堵，可以做一个简单的频率限制或 hash check (这里简化处理，总是返回)
+                    # 实际上，如果 API URL 本身不变，seen_urls 机制会拦截它。
+                    # 所以这里有一个特殊逻辑：API URL 应该被视为“生成器”，而不是“文章”。
+                    # 但是 FinNewsPipeline 的设计是 URL -> Process。
+                    # 为了让 Crawler 每次都去抓新的 JSON，我们需要让 Monitor 每次都把这个 API URL 抛出去吗？
+                    # 不，如果 seen_urls 记录了 api_url，下次就不抓了。
+                    # **修正**: API URL 不应该加入 seen_urls，或者每次加一个时间戳参数让它不同。
+                    
+                    # 策略：Monitor 返回 API URL，Crawler 解析出 NewsItems。
+                    # 我们需要确保 Monitor 每次都能把 API URL 报上去。
+                    return [api_url] 
+        except Exception as e:
+            logger.debug(f"API scan skip: {api_url[:40]}... ({str(e)[:20]})")
+        
+        return []
 
     async def harvest(self) -> List[str]:
         """
-        全火力覆盖扫描
+        全火力扫描 + 统计报告
         """
         async with aiohttp.ClientSession() as session:
-            # 1. 启动 API 任务
-            tasks = [
-                self.scan_sina_7x24(session),
-                self.scan_eastmoney_kuaixun(session)
-            ]
+            tasks = []
+            
+            # 1. 启动 API 任务 (直接把 API URL 交给 Crawler 处理)
+            for api_url in self.api_sources:
+                tasks.append(self.scan_api_endpoint(session, api_url))
             
             # 2. 启动所有 RSS 任务
             for rss_url in self.rss_sources:
@@ -134,8 +143,21 @@ class NewsMonitor:
             # 4. 展平结果
             all_urls = [u for sub in results for u in sub]
             
-            # 调试打印
+            # 统计
+            self.stats['total_scanned'] += 1
+            self.stats['new_urls'] += len(all_urls)
+            
+            # 每10次扫描打印统计
+            if self.stats['total_scanned'] % 10 == 0:
+                logger.info(
+                    f"📊 Scan Stats: "
+                    f"Total={self.stats['total_scanned']} | "
+                    f"NewURLs={self.stats['new_urls']} | "
+                    f"RSS_OK={self.stats['rss_success']} | "
+                    f"RSS_Fail={self.stats['rss_failed']}"
+                )
+            
             if all_urls:
-                logger.info(f"📡 Radar Detected {len(all_urls)} URLs from {len(self.rss_sources) + 2} sources.")
+                logger.info(f"📡 Detected {len(all_urls)} URLs this round")
             
             return all_urls

@@ -86,11 +86,11 @@ python main.py
 
 | 模块 | 文件位置 | 功能描述 |
 |------|----------|----------|
-| **主控模块** | [main.py](file:///d:/assignment_2025_autumn/quant_finance/FinNewsMasterV1Gemini/main.py) | 系统入口，协调生产者和消费者 |
+| **主控模块** | [main.py](file:///d:/assignment_2025_autumn/quant_finance/FinNewsMasterV1Gemini/main.py) | 系统入口，协调生产者和消费者，包含性能统计 |
 | **配置管理** | [config/settings.py](file:///d:/assignment_2025_autumn/quant_finance/FinNewsMasterV1Gemini/config/settings.py) | 全局配置和路径管理 |
-| **爬虫模块** | [core/crawler.py](file:///d:/assignment_2025_autumn/quant_finance/FinNewsMasterV1Gemini/core/crawler.py) | 异步抓取新闻内容 |
-| **AI引擎** | [core/engine.py](file:///d:/assignment_2025_autumn/quant_finance/FinNewsMasterV1Gemini/core/engine.py) | LLM推理和分析 |
-| **监控模块** | [core/monitor.py](file:///d:/assignment_2025_autumn/quant_finance/FinNewsMasterV1Gemini/core/monitor.py) | 新闻源扫描和URL发现 |
+| **爬虫模块** | [core/crawler.py](file:///d:/assignment_2025_autumn/quant_finance/FinNewsMasterV1Gemini/core/crawler.py) | 异步抓取新闻内容，支持HTML和JSON API |
+| **AI引擎** | [core/engine.py](file:///d:/assignment_2025_autumn/quant_finance/FinNewsMasterV1Gemini/core/engine.py) | LLM推理和分析，包含快速通道(Fast Path)和慢速通道(Slow Path) |
+| **监控模块** | [core/monitor.py](file:///d:/assignment_2025_autumn/quant_finance/FinNewsMasterV1Gemini/core/monitor.py) | 新闻源扫描，支持RSS和直接API监控 |
 | **数据模型** | [core/schema.py](file:///d:/assignment_2025_autumn/quant_finance/FinNewsMasterV1Gemini/core/schema.py) | 数据结构和验证 |
 
 ### 工作流程
@@ -99,7 +99,7 @@ python main.py
 ┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
 │  新闻监控模块    │    │   爬虫模块      │    │   AI分析引擎    │
 │ [core/monitor.py]│───▶│ [core/crawler.py]│───▶│ [core/engine.py] │
-│ 扫描RSS源       │    │ 异步抓取内容    │    │ 双通道分析      │
+│ 扫描RSS/API     │    │ 抓取HTML/JSON   │    │ 双通道分析      │
 └─────────────────┘    └─────────────────┘    └─────────────────┘
         │                        │                        │
         ▼                        ▼                        ▼
@@ -112,18 +112,18 @@ python main.py
 ### 详细处理流程
 
 1. **监控阶段** ([core/monitor.py](file:///d:/assignment_2025_autumn/quant_finance/FinNewsMasterV1Gemini/core/monitor.py#L9-L40))
-   - 每30秒扫描预设的RSS新闻源
-   - 过滤已处理过的URL，避免重复分析
-   - 返回新发现的新闻链接
+   - 扫描预设的RSS新闻源和API接口
+   - 自动识别API返回的JSON数据
+   - 过滤已处理过的URL
 
 2. **抓取阶段** ([core/crawler.py](file:///d:/assignment_2025_autumn/quant_finance/FinNewsMasterV1Gemini/core/crawler.py#L20-L30))
-   - 使用Jina Reader服务提取网页内容
-   - 异步并发处理，提高效率
-   - 自动重试机制，确保稳定性
+   - **JSON API**: 直接解析API返回的结构化数据（如东方财富快讯），高效批量提取
+   - **HTML页面**: 使用Jina Reader服务提取网页内容
+   - 异步并发处理，支持返回单个或批量新闻
 
 3. **分析阶段** ([core/engine.py](file:///d:/assignment_2025_autumn/quant_finance/FinNewsMasterV1Gemini/core/engine.py#L15-L25))
-   - **快速通道**：初步筛选，判断新闻是否值得深度分析
-   - **慢速通道**：深度推理，提取交易信号和投资建议
+   - **快速通道**: 基于关键词和轻量级LLM判断，大幅降低误判率
+   - **慢速通道**: 深度推理，提取交易信号和投资建议
    - GPU温度监控，防止过热
 
 4. **保存阶段** ([main.py](file:///d:/assignment_2025_autumn/quant_finance/FinNewsMasterV1Gemini/main.py#L105-L115))
@@ -298,6 +298,6 @@ slow_prompt = """深度分析这条新闻对黄金、原油、铜等大宗商品
 
 ---
 
-** 开始你的AI金融分析之旅吧！**
+**开始你的AI金融分析之旅吧**
 
 记住：任何复杂的系统都是从简单的步骤开始的。先运行起来，再逐步优化和扩展。

@@ -8,6 +8,8 @@ from core.engine import LLMEngine
 from core.schema import NewsPayload, SignalAnalysis
 # main.py 头部增加导入
 from core.monitor import NewsMonitor
+from core.calibrator import SignalCalibrator
+from core.filter import SignalFilter
 
 # 配置日志
 logger.remove()
@@ -19,15 +21,20 @@ class FinNewsPipeline:
         self.crawler = AsyncCrawler()
         self.engine = LLMEngine()
         self.queue = asyncio.Queue(maxsize=100) # 缓冲区大小
+        self.calibrator = SignalCalibrator()
         
     async def producer(self, urls: list[str]):
         """
         生产者：负责抓取数据并放入队列
         """
         for url in urls:
-            news = await self.crawler.process_url(url)
-            if news:
-                await self.queue.put(news)
+            result = await self.crawler.process_url(url)
+            if result:
+                if isinstance(result, list):
+                     for news in result:
+                         await self.queue.put(news)
+                else:
+                     await self.queue.put(result)
         
         # 放置结束哨兵
         await self.queue.put(None)
@@ -37,12 +44,18 @@ class FinNewsPipeline:
         """
         消费者：从队列取数据，进行 LLM 双流处理
         """
+        total_crawled = 0
+        passed_fast = 0
+        got_analysis = 0
+
         while True:
             news = await self.queue.get()
             if news is None:
                 self.queue.task_done()
                 break 
             
+            total_crawled += 1
+
             try:
                 # === 诊断插桩：强制保存 Raw Data ===
                 # 只要抓到了，先存下来，证明我们来过
@@ -59,14 +72,33 @@ class FinNewsPipeline:
 
                 # 1. Fast Path
                 if await self.engine.fast_path_filter(news):
+                    passed_fast += 1
                     logger.info(f"⚡ Entering Slow Path: {news.title[:30]}...")
                     analysis = await self.engine.slow_path_analyze(news)
                     
                     if analysis:
+                        got_analysis += 1
+                        # Quality Check
+                        is_high_quality = SignalFilter.is_tradable(analysis, self.calibrator)
+                        
                         await self.save_result(analysis)
-                        logger.success(f"🎯 Signal Extracted: Score {analysis.score} | {analysis.related_stocks}")
+                        
+                        log_msg = f"Signal: Score {analysis.score} | Certainty {analysis.certainty} | {analysis.related_stocks}"
+                        if is_high_quality:
+                            logger.success(f"💎 [HIGH QUALITY] {log_msg}")
+                        else:
+                            logger.info(f"🎯 {log_msg}")
                 
                 # 哪怕是 Noise，因为前面已经 save raw 了，这里就不需要额外操作了
+
+                # 每处理10条打印一次统计
+                if total_crawled % 10 == 0:
+                    logger.info(
+                        f"📈 Pipeline Stats: "
+                        f"Crawled={total_crawled} | "
+                        f"FastPass={passed_fast} | "
+                        f"ValidSignal={got_analysis}"
+                    )
 
             except Exception as e:
                 logger.exception(f"Pipeline Error processing {news.url}: {e}")
